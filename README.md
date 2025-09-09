@@ -67,7 +67,7 @@ pip install -r requirements.txt
 # 4) Apply migrations
 python manage.py migrate
 
-# 5) Install Redis, In my case I install Ubuntu on Windows as it needs a linux machine
+# 5) Install Redis, in my case I install Ubuntu on Windows as it needs a linux machine
 (Optional) Run Redis with Docker (if using Redis channel layer)
 docker run --name chat-redis -p 6379:6379 -d redis:7-alpine
 
