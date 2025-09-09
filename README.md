@@ -51,8 +51,8 @@ A small learning project that demonstrates how to build **real‑time chat** wit
 ### Install & Run (Quickstart)
 ```bash
 # 1) Clone
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/MustaphaBoukhit/dj_Chat_Channels/.git
+cd dj_Chat_Channels
 
 # 2) Create & activate a virtual environment
 python -m venv .venv
@@ -67,7 +67,8 @@ pip install -r requirements.txt
 # 4) Apply migrations
 python manage.py migrate
 
-# 5) (Optional) Run Redis with Docker (if using Redis channel layer)
+# 5) Install Redis, In my case I install Ubuntu on Windows as it needs a linux machine
+(Optional) Run Redis with Docker (if using Redis channel layer)
 docker run --name chat-redis -p 6379:6379 -d redis:7-alpine
 
 # 6) Run the ASGI server with Daphne (recommended for WebSockets)
