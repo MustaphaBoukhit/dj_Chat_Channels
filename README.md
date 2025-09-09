@@ -120,10 +120,9 @@ Also ensure your `ASGI` routing is configured in something like `chat/routing.py
 
 ## Usage
 - Navigate to the home page, pick or create a **room**, and start chatting — messages should appear **instantly** for all connected users in that room.
-- Use the **private message** UI (or a designated input) to send a direct message to a specific user; only the target user should receive it.
+- select a user from the list of online users to send a direct message to; only the target user should receive it.
 - If you expose WebSocket endpoints, they might look like (adjust to your actual routes):
-  - `ws/chat/rooms/<room_name>/`
-  - `ws/chat/private/<username>/`
+  - `ws/chat/<room_name>/`
 
 > Exact URLs, payload formats, and UI controls depend on your implementation. Update this section with the final details as you build them.
 
@@ -135,7 +134,7 @@ A typical layout (adjust to your repo):
 ```
 .
 ├─ chat/
-│  ├─ consumers.py        # ChatConsumer / PrivateChatConsumer
+│  ├─ consumers.py        # ChatConsumer
 │  ├─ routing.py          # websocket_urlpatterns
 │  ├─ urls.py             # app URLs (optional)
 │  ├─ templates/          # HTML templates
@@ -174,6 +173,7 @@ Consider adding consumer tests with Channels’ testing utilities.
 - [ ] Message persistence (store chat history in DB)
 - [ ] Typing indicators / presence
 - [ ] Read receipts
+- [ ] separate private message UI
 - [ ] Message delivery status and retries
 - [ ] Dockerfile / docker-compose for dev
 
